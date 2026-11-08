@@ -9,16 +9,18 @@ const routes = [
   { test: (value) => value.startsWith("/blog/"), template: "post", title: "Post — Hassan", module: "/assets/post.js" },
 ];
 const route = routes.find((item) => item.test(path)) || { template: "home", title: "Hassan — AI Automation & Data" };
-const template = document.querySelector(`#template-${route.template}`);
-if (!template) throw new Error(`Missing page template: ${route.template}`);
 
 document.title = route.title;
 document.body.classList.toggle("admin-body", Boolean(route.admin));
 document.querySelector('meta[name="robots"]').content = route.admin ? "noindex, nofollow" : "index, follow";
 document.querySelector('link[rel="canonical"]').href = location.href.split("?")[0];
-root.replaceChildren(template.content.cloneNode(true));
+if (route.template !== "home") {
+  const template = document.querySelector(`#template-${route.template}`);
+  if (!template) throw new Error(`Missing page template: ${route.template}`);
+  root.replaceChildren(template.content.cloneNode(true));
+}
 
-if (route.template === "home" || route.template === "blog") {
+if (route.template === "blog" || (route.template === "home" && location.protocol !== "file:")) {
   const siteScript = document.createElement("script");
   siteScript.src = "/script.js";
   document.body.append(siteScript);

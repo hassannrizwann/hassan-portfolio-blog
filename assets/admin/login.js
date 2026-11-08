@@ -1,6 +1,12 @@
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import { auth, isConfigured, isAdmin } from "../blog-data.js";
 const form = document.querySelector("#login-form"), message = document.querySelector("#message");
+document.querySelector("#reset-password")?.addEventListener("click", async () => {
+  const email = form.email.value.trim();
+  if (!email) { message.textContent = "Enter your email address above first."; form.email.focus(); return; }
+  try { await sendPasswordResetEmail(auth, email); message.textContent = "If that account is registered, a password reset email is on its way."; }
+  catch { message.textContent = "If that account is registered, a password reset email is on its way."; }
+});
 if (!isConfigured) message.textContent = "Setup needed: add Firebase values and the admin UID first.";
 else {
   onAuthStateChanged(auth, async (user) => { if (user && isAdmin(user)) location.replace("/admin"); else if (user) await signOut(auth); });

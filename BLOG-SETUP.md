@@ -2,6 +2,8 @@
 
 The portfolio, public blog, post view, and admin views are served through one HTML entry point, `index.htm`. The blog uses Firebase Authentication and Cloud Firestore for login and post data, and Cloudinary for images. Admin access is restricted by both the browser guard and Firestore rules.
 
+Opening `index.htm` directly from File Explorer shows the portfolio. Its Blog link opens the hosted blog so Firebase modules and authentication work on the secure Vercel origin. The blog page includes an admin sign-in link and a password reset action.
+
 ## 1. Firebase
 
 1. Hassan's Firebase project is `hassan-portfoli`; its web app is already registered and configured in `assets/firebase-config.js`. Do not use the reference author's Firebase project.
