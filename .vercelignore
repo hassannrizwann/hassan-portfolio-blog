@@ -1,0 +1,9 @@
+node_modules/
+tmp/
+tools/
+BLOG-SETUP.md
+Blog-CMS-Plan-Reference.pdf
+Hassan_profile.json
+portfolioclass.json
+package.json
+package-lock.json

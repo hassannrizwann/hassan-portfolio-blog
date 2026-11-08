@@ -1,0 +1,10 @@
+
+node_modules/
+tmp/
+.env
+.env.*
+!.env.example
+Blog-CMS-Plan-Reference.pdf
+Hassan_profile.json
+portfolioclass.json
+

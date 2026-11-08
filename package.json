@@ -1,0 +1,27 @@
+{
+  "name": "hassan-portfolio-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:editor": "node tools/editor/build.mjs"
+  },
+  "devDependencies": {
+    "@tiptap/core": "^2.27.3",
+    "@tiptap/extension-code-block-lowlight": "^2.27.3",
+    "@tiptap/extension-highlight": "^2.27.3",
+    "@tiptap/extension-image": "^2.27.3",
+    "@tiptap/extension-link": "^2.27.3",
+    "@tiptap/extension-placeholder": "^2.27.3",
+    "@tiptap/extension-table": "^2.27.3",
+    "@tiptap/extension-table-cell": "^2.27.3",
+    "@tiptap/extension-table-header": "^2.27.3",
+    "@tiptap/extension-table-row": "^2.27.3",
+    "@tiptap/extension-text-align": "^2.27.3",
+    "@tiptap/extension-underline": "^2.27.3",
+    "@tiptap/extension-youtube": "^2.27.3",
+    "@tiptap/starter-kit": "^2.27.3",
+    "dompurify": "^3.2.6",
+    "esbuild": "^0.25.0",
+    "lowlight": "^3.3.0"
+  }
+}
