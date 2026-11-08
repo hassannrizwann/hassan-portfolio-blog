@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import {
-  getFirestore, collection, doc, getDoc, getDocs, query, where, setDoc,
+  getFirestore, collection, doc, getDoc, getDocs, query, where, setDoc, onSnapshot,
   deleteDoc, serverTimestamp, Timestamp, runTransaction,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 import { firebaseConfig, ADMIN_UID } from "./firebase-config.js";
@@ -30,6 +30,12 @@ export async function listPublished() {
   const snapshot = await getDocs(query(postsRef(), where("status", "==", "published")));
   return snapshot.docs.map((item) => ({ id: item.id, ...item.data() }))
     .sort((a, b) => dateValue(b.publishedAt) - dateValue(a.publishedAt));
+}
+export function watchPublished(callback, onError = () => {}) {
+  return onSnapshot(query(postsRef(), where("status", "==", "published")), (snapshot) => {
+    callback(snapshot.docs.map((item) => ({ id: item.id, ...item.data() }))
+      .sort((a, b) => dateValue(b.publishedAt) - dateValue(a.publishedAt)));
+  }, onError);
 }
 export async function getPublishedBySlug(slug) {
   try {

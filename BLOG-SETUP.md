@@ -15,6 +15,8 @@ Opening `index.htm` directly from File Explorer shows the portfolio. Its Blog li
 
 Post documents live in `posts/{postId}` and use `title`, `slug`, `excerpt`, `contentJson`, `contentHtml`, optional `coverImage: {url, alt}`, lowercase `tags`, `status`, timestamps, `readingTime`, and SEO metadata. `slugs/{slug}` maps a URL slug to a post ID.
 
+The portfolio home page shows the newest published post. It is labeled “Today's blog” for its first 24 hours, then “Latest blog”; publishing a newer post replaces the home-page feature while older posts remain in the public archive.
+
 ## 2. Cloudinary
 
 Hassan's Cloudinary cloud name is configured in `assets/cloudinary-config.js`. The `hassan_blog` unsigned upload preset is saved. It uses the `blog` asset folder, permits JPG, PNG, WebP, GIF, and AVIF, generates random public IDs, and disallows caller-supplied public IDs. The editor enforces an 8 MB file limit. The preset name and cloud name are public identifiers; do not add an API secret to this site.

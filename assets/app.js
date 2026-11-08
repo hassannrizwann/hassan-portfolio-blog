@@ -8,7 +8,7 @@ const routes = [
   { test: (value) => value === "/blog", template: "blog", title: "Notes & Ideas — Hassan", module: "/assets/blog.js" },
   { test: (value) => value.startsWith("/blog/"), template: "post", title: "Post — Hassan", module: "/assets/post.js" },
 ];
-const route = routes.find((item) => item.test(path)) || { template: "home", title: "Hassan — AI Automation & Data" };
+const route = routes.find((item) => item.test(path)) || { template: "home", title: "Hassan — AI Automation & Data", module: "/assets/home-latest.js" };
 
 document.title = route.title;
 document.body.classList.toggle("admin-body", Boolean(route.admin));
