@@ -1,6 +1,6 @@
 # Blog CMS setup
 
-The portfolio remains a static HTML/CSS/JavaScript site. The blog uses Firebase Authentication and Cloud Firestore for login and post data, and Cloudinary for images. Admin access is restricted by both the browser guard and Firestore rules.
+The portfolio, public blog, post view, and admin views are served through one HTML entry point, `index.htm`. The blog uses Firebase Authentication and Cloud Firestore for login and post data, and Cloudinary for images. Admin access is restricted by both the browser guard and Firestore rules.
 
 ## 1. Firebase
 
@@ -19,7 +19,7 @@ Hassan's Cloudinary cloud name is configured in `assets/cloudinary-config.js`. T
 
 ## 3. Vercel hosting
 
-Deploy this folder as a Vercel static site with the included `vercel.json`. Firebase handles sign-in and post data; Cloudinary stores images. Vercel only serves the static files and rewrites the blog/admin routes. No other application service or serverless function is used. The code is not yet in a GitHub repository and this checkout has no commits or remote, so Vercel deployment still needs a repository destination and Vercel project setup.
+Deploy this folder as a Vercel static site with the included `vercel.json`. Firebase handles sign-in and post data; Cloudinary stores images. Vercel serves the static assets and rewrites the portfolio, blog, and admin routes to `index.htm`. No other application service or serverless function is used. The source repository is `https://github.com/hassannrizwann/hassan-portfolio-blog`.
 
 ## 4. First run checklist
 

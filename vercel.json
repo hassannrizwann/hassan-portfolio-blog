@@ -1,10 +1,10 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/:slug", "destination": "/post.html" },
-    { "source": "/admin", "destination": "/admin/index.html" },
-    { "source": "/admin/login", "destination": "/admin/login.html" },
-    { "source": "/admin/editor", "destination": "/admin/editor.html" }
+    { "source": "/", "destination": "/index.htm" },
+    { "source": "/blog", "destination": "/index.htm" },
+    { "source": "/blog/:slug", "destination": "/index.htm" },
+    { "source": "/admin", "destination": "/index.htm" },
+    { "source": "/admin/:path*", "destination": "/index.htm" }
   ],
   "headers": [
     { "source": "/admin", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] },
