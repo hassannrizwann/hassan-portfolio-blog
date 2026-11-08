@@ -9,7 +9,7 @@ The portfolio, public blog, post view, and admin views are served through one HT
 3. Firebase web app configuration is saved in `assets/firebase-config.js`. These browser config values are public; Firestore rules protect the data.
 4. Hassan's admin UID is configured in both `assets/firebase-config.js` and `firestore.rules`.
 5. The Firestore database is provisioned as Standard edition in `asia-south1` (Mumbai), starting in production mode. `firestore.rules` has been published: public reads are limited to published posts, and writes are limited to Hassan's configured admin UID.
-6. Add the Vercel domain to Firebase Authentication → Settings → Authorized domains.
+6. Firebase Authentication → Settings → Authorized domains includes `hassan-portfolio-blog.vercel.app` for the deployed site.
 
 Post documents live in `posts/{postId}` and use `title`, `slug`, `excerpt`, `contentJson`, `contentHtml`, optional `coverImage: {url, alt}`, lowercase `tags`, `status`, timestamps, `readingTime`, and SEO metadata. `slugs/{slug}` maps a URL slug to a post ID.
 
