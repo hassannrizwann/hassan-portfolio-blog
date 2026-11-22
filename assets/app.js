@@ -7,6 +7,7 @@ const routes = [
   { test: (value) => value === "/admin", template: "admin-dashboard", title: "Blog dashboard — Hassan", admin: true, module: "/assets/admin/dashboard.js" },
   { test: (value) => value === "/blog", template: "blog", title: "Notes & Ideas — Hassan", module: "/assets/blog.js" },
   { test: (value) => value.startsWith("/blog/"), template: "post", title: "Post — Hassan", module: "/assets/post.js" },
+  { test: (value) => value === "/projects", template: "projects", title: "Project Portfolio — Hassan" },
 ];
 const route = routes.find((item) => item.test(path)) || { template: "home", title: "Hassan — AI Automation & Data", module: "/assets/home-latest.js" };
 

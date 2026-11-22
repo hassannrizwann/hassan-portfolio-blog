@@ -3,6 +3,7 @@
     { "source": "/", "destination": "/index.htm" },
     { "source": "/blog", "destination": "/index.htm" },
     { "source": "/blog/:slug", "destination": "/index.htm" },
+    { "source": "/projects", "destination": "/index.htm" },
     { "source": "/admin", "destination": "/index.htm" },
     { "source": "/admin/:path*", "destination": "/index.htm" }
   ],
